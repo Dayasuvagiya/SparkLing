@@ -1,3 +1,17 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import time
+from colorama import Fore, Style
+
+def welcome_mess():
+
+    print("######################################")
+    print("#                                    #")
+    print("#     Let's begin ZodiacJourney      #")
+    print("#    ---------------------------     #")
+    print("#                                    #")
+    print("######################################")
+
+
+    print(
+        Fore.CYAN + "Unlock Your Cosmic Blueprint - Discover Your Zodiac Sign Today!" +
+        Style.RESET_ALL + "\n")
+     
