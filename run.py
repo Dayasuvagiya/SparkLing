@@ -28,7 +28,7 @@ def welcome_mess():
   #  def __init__(self, name):
    #     self.name=name  
 
-def Zodiac_sign():
+def Zodiac_sign(letter):
     """Define dictionary to show zodiac sign"""
     zodiac_alphabets = {
          'bh':'Sagittarius', 'f':'Sagittarius', 'dh':'Sagittarius', 
@@ -44,27 +44,48 @@ def Zodiac_sign():
          'b':'Taurus', 'v':'Taurus', 'u':'Taurus', 'w':'Taurus', 
          'n':'Scorpio', 'y':'Scorpio'
     }
-    #user input convert to lowercase
+    #User input convert to lowercase
     lower_case = lower_case.lower()
+
+    #If statment to look up zodiac sign of each letter
+    for key, value in zodiac_alphabets.items():
+        if key == letter:
+            print(value)
+        else:
+            return None
+
 
 
 def user_name():
     """Display menu for user to select one option"""
 
     while True:
-        print("/nMENU:")
+        print("MENU:")
         print("1. Discover Your Zodiac Identity Through Your Name!.")
         print("2. Read the importance of your Zodiac sign.")
         print("3. Exit program.")
         # User options for further steps 
-        user_selection=input("Enter your choice (1, 2, or 3)")
+        user_selection=input("Enter your choice (1, 2, or 3)/n")
         
-        if user_select == "1":
-            name_letter=input("Please enter first letter of your name")
+        if user_selection == "1":
+            name_letter=input("Please enter first letter of your name/n")
+            rashi = Zodiac_sign(name_letter)
+            print(rashi)
+
+        elif user_selection =="2":
+            file = open('requirements.txt') 
+            importances=file.read()
+            file.close()
+            print(importances)
+        elif user_selection == "3":
+            # Exit
+            print("I appreciate your utilization of this program!/n")
+            break  
+        else:
+            # user selection is not valid
+            print("The selection is invalid. Please select again.") 
 
 
-
-
-welcome_mess()
-
-user_name()
+if __name__ == '__main__':
+    welcome_mess()
+    user_name()
