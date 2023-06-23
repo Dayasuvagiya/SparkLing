@@ -40,16 +40,18 @@ def zodiac_sign(letter):
          'm':'Leo', 'tt':'Leo', 
          'r':'Libra', 't':'Libra', 
          'b':'Taurus', 'v':'Taurus', 'u':'Taurus', 'w':'Taurus', 
-         'n':'Scorpio', 'y':'Scorpio'
+         'n':'Scorpio', 'y':'Scorpio', 'x':'No Zodiac sign for this letter'
     }
     #User input convert to lowercase
     lower_case = letter.lower() 
     # Look up zodiac sign of each letter
     for key, value in zodiac_alphabets.items():
         if key == lower_case:
-            return value
+            return f"Your Zodiac sign is '{value}'"
         
-    return "No Rashi found please enter correct charector"
+    return """No data found please enter correct character,
+    For Instance: 
+    Your name is 'John', enter 'j' or 'J'"""
  
 
 def user_name():
@@ -58,12 +60,12 @@ def user_name():
 
     while True:
         print("MENU:")
-        print("1. Discover your Zodiac identity through your name!.")
-        print("2. Read the importance of your Zodiac sign.")
+        print("1. Discover your Zodiac identity through your name.")
+        print("2. Read the importance of the Zodiac sign.")
         print("3. Exit program.")
         # User options for further steps 
         user_selection=input("Enter your choice (1, 2, or 3)\n")
-        
+
         if user_selection == "1":
             name_letter=input("Please enter the first letter of your name.\n")
             rashi = zodiac_sign(name_letter)
@@ -79,7 +81,7 @@ def user_name():
             print('\n')
         elif user_selection == "3":
             # Exit
-            print("I appreciate your utilization of this program!\n")
+            print("I appreciate your utilization of this program!")
             break  
         else:
             # user selection is not valid
