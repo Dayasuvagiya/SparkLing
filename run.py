@@ -1,5 +1,5 @@
 import time
-import sys
+
 
 def welcome_mess():
     """Creates a welcome message"""
@@ -17,19 +17,17 @@ def welcome_mess():
     time.sleep(1)
     print("Do you want to know your Zodiac sign?")
     time.sleep(1)
-    print("Let's start:)")
+    print("Let's start")
     time.sleep(1)
-    print("^_^")
+    print("^_^\n")
     time.sleep(1)
+  
 
+def zodiac_sign(letter):
+    """Define dictionary to show zodiac sign,
+    Convert user input in lower case,
+    loop and if statment to show output"""
 
-#class User():
- #   """Creates an instance to take user name"""
-  #  def __init__(self, name):
-   #     self.name=name  
-
-def Zodiac_sign(letter):
-    """Define dictionary to show zodiac sign"""
     zodiac_alphabets = {
          'bh':'Sagittarius', 'f':'Sagittarius', 'dh':'Sagittarius', 
          'p':'Virgo', 'tha':'Virgo', 
@@ -45,46 +43,48 @@ def Zodiac_sign(letter):
          'n':'Scorpio', 'y':'Scorpio'
     }
     #User input convert to lowercase
-    lower_case = lower_case.lower()
-
-    #If statment to look up zodiac sign of each letter
+    lower_case = letter.lower() 
+    # Look up zodiac sign of each letter
     for key, value in zodiac_alphabets.items():
-        if key == letter:
-            print(value)
-        else:
-            return None
-
-
+        if key == lower_case:
+            return value
+        
+    return "No Rashi found please enter correct charector"
+ 
 
 def user_name():
-    """Display menu for user to select one option"""
+    """Display menu for user to select one option,
+    According to user choice give the relevant response"""
 
     while True:
         print("MENU:")
-        print("1. Discover Your Zodiac Identity Through Your Name!.")
+        print("1. Discover your Zodiac identity through your name!.")
         print("2. Read the importance of your Zodiac sign.")
         print("3. Exit program.")
         # User options for further steps 
-        user_selection=input("Enter your choice (1, 2, or 3)/n")
+        user_selection=input("Enter your choice (1, 2, or 3)\n")
         
         if user_selection == "1":
-            name_letter=input("Please enter first letter of your name/n")
-            rashi = Zodiac_sign(name_letter)
+            name_letter=input("Please enter the first letter of your name.\n")
+            rashi = zodiac_sign(name_letter)
             print(rashi)
+            print('\n')
 
         elif user_selection =="2":
-            file = open('requirements.txt') 
+            #Read importance of zodiac sign
+            file = open('importance.txt') 
             importances=file.read()
             file.close()
             print(importances)
+            print('\n')
         elif user_selection == "3":
             # Exit
-            print("I appreciate your utilization of this program!/n")
+            print("I appreciate your utilization of this program!\n")
             break  
         else:
             # user selection is not valid
             print("The selection is invalid. Please select again.") 
-
+            print('\n')
 
 if __name__ == '__main__':
     welcome_mess()
