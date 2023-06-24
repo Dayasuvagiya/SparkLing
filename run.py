@@ -71,13 +71,15 @@ def numerology(nume_letter):
     if nume_letter in numerology_alphabets:
         return numerology_alphabets[nume_letter]
     else:
-        return Fore.RED + "Invalid input, Please enter valid name again" + Style.RESET_ALL
+        return 0 
     
 def addition_nume(user_name):
     #addition of name numerology value
     numerology_value = 0
     for each_letter in user_name:
         alpha_value = numerology(each_letter)
+        if alpha_value == 0:
+            return Fore.RED + "Please enter only alphabets" + Style.RESET_ALL
         numerology_value += alpha_value
 
     #addition of number base on letter
