@@ -66,7 +66,7 @@ def numerology(nume_letter):
     if nume_letter in numerology_alphabets:
         return numerology_alphabets(nume_letter.lower())
     else:
-        return "Invalid input, Please enter your name again"
+        raise Exception("Invalid input, Please enter valid name again")
     
 def addition_nume(user_name):
     #addition of name numerology value
@@ -96,7 +96,7 @@ def user_name():
             print("MENU:")
             print("1. Discover your Zodiac identity through your name.")
             print("2. Discover numerology value of your name.")
-            print("3. Read the importance of the Zodiac sign.")
+            print("3. Read personality traits based on your Zodiac sign.")
             print("4. Exit program.")
             user_selection=input("Enter your choice (1, 2,,3 or 4)\n")
 
@@ -134,14 +134,6 @@ def user_name():
 
         except ValueError:
             print("Invalid input. Please enter a valid number.")
-
-
-
-
-
-
-
-
 
 
 
