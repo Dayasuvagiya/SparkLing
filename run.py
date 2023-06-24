@@ -60,19 +60,30 @@ def numerology(nume_letter):
         'o': 6, 'p': 7, 'q': 8, 'r': 9,'s': 1, 't': 2, 'u': 3, 
         'v': 4, 'w': 5, 'x': 6, 'y': 7, 'z': 8
     }
+    #check the value for name given by user,
     #User input convert to lowercase
-    lower_case_alpha = nume_letter.lower()
 
-    if lower_case_alpha in numerology_alphabets:
-        return lower_case_alpha [nume_letter]
+    if nume_letter in numerology_alphabets:
+        return numerology_alphabets(nume_letter.lower())
     else:
-        return 0
+        return "Invalid input, Please enter your name again"
     
 def addition_nume(user_name):
     #addition of name numerology value
     numerology_value=0
-    
+    for each_letter in user_name:
+        alpha_value=numerology(each_letter)
+        numerology_value += alpha_value
 
+    #addition of number base on letter
+    while numerology_value > 9:
+        letter_value=0
+        numerology_string=str(numerology_value)
+        for number in numerology_string:
+            letter_value+=int(number)
+            numerology_value=letter_value
+    time.sleep(1)
+    return f"The numerology value of your name is '{numerology_value}'"
 
 def user_name():
     """Display menu for user to select one option,
@@ -84,27 +95,38 @@ def user_name():
             #The main menu, gives user options to select.
             print("MENU:")
             print("1. Discover your Zodiac identity through your name.")
-            print("2. Read the importance of the Zodiac sign.")
-            print("3. Exit program.")
-            user_selection=input("Enter your choice (1, 2, or 3)\n")
+            print("2. Discover numerology value of your name.")
+            print("3. Read the importance of the Zodiac sign.")
+            print("4. Exit program.")
+            user_selection=input("Enter your choice (1, 2,,3 or 4)\n")
 
             if user_selection == "1":
-                name_letter=input("Please enter the first letter of your name.\n")
+                #Know the Zodiac sign
+                name_letter=input("Please enter the first letter of your name:\n")
                 rashi = zodiac_sign(name_letter)
                 print(rashi)
                 print('\n')
 
-            elif user_selection =="2":
+            elif user_selection=="2":
+                #Know numerology value of name
+                user_name= input("Enter your full name:")
+                nume_value=addition_nume(user_name)
+                print(nume_value)
+                print('\n')
+
+            elif user_selection =="3":
                 #Read importance of zodiac sign
                 file = open('importance.txt') 
                 importances=file.read()
                 file.close()
                 print(importances)
                 print('\n')
-            elif user_selection == "3":
+
+            elif user_selection == "4":
                 # Exit
                 print("I appreciate your utilization of this program!")
                 break  
+            
             else:
                 # user selection is not valid
                 print("invalid choice. Please select again.") 
