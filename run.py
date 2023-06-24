@@ -1,25 +1,27 @@
 import time
-
+import colorama
+from colorama import Fore, Back, Style
+colorama.init() 
 
 def welcome_mess():
     """Creates a welcome message"""
-    print("######################################")
+    print(Fore.CYAN + "######################################")
     print("#                                    #")
     print("#     Let's begin ZodiacJourney      #")
     print("#    ---------------------------     #")
     print("#                                    #")
-    print("######################################")
+    print("######################################" + Style.RESET_ALL)
     time.sleep(1)
     print(" ")
 
     time.sleep(1)
-    print("Unlock Your Cosmic Blueprint - Discover Your Zodiac Sign Today!")
+    print("Welcome to mesmerizing realm of astrology.")
     time.sleep(1)
-    print("Do you want to know your Zodiac sign?")
+    print("Discover the Zodiac sign & numerology value of your name.")
     time.sleep(1)
-    print("Let's start")
+    print("Let's start...")
     time.sleep(1)
-    print("^_^\n")
+    print(Fore.CYAN + "^_^" + Style.RESET_ALL +"\n")
     time.sleep(1)
   
 
@@ -47,50 +49,53 @@ def zodiac_sign(letter):
     # Look up zodiac sign of each letter
     for key, value in zodiac_alphabets.items():
         if key == lower_case:
-            return f"Your Zodiac sign is '{value}'"
+            time.sleep(1)
+            return Fore.GREEN + f"Your Zodiac sign is '{value}'" + Style.RESET_ALL
         
-    return """No data found please enter correct character,
+    return Fore.RED+"""No data found please enter correct character,
     For Instance: 
-    Your name is 'John', enter 'j' or 'J'"""
+    Your name is 'John', enter 'j' or 'J'"""+ Style.RESET_ALL
  
 def numerology(nume_letter):
+    """Define dictionary to calculate numerology value,
+    check the value for name given by user,
+    User input convert to lowercase"""
     numerology_alphabets = {
         'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 
         'h': 8, 'i': 9, 'j': 1, 'k': 2, 'l': 3, 'm': 4, 'n': 5, 
         'o': 6, 'p': 7, 'q': 8, 'r': 9,'s': 1, 't': 2, 'u': 3, 
         'v': 4, 'w': 5, 'x': 6, 'y': 7, 'z': 8
     }
-    #check the value for name given by user,
-    #User input convert to lowercase
-
+    
+    nume_letter = nume_letter.lower()
     if nume_letter in numerology_alphabets:
-        return numerology_alphabets(nume_letter.lower())
+        return numerology_alphabets[nume_letter]
     else:
-        raise Exception("Invalid input, Please enter valid name again")
+        return Fore.RED + "Invalid input, Please enter valid name again" + Style.RESET_ALL
     
 def addition_nume(user_name):
     #addition of name numerology value
-    numerology_value=0
+    numerology_value = 0
     for each_letter in user_name:
-        alpha_value=numerology(each_letter)
+        alpha_value = numerology(each_letter)
         numerology_value += alpha_value
 
     #addition of number base on letter
     while numerology_value > 9:
-        letter_value=0
-        numerology_string=str(numerology_value)
+        letter_value = 0
+        numerology_string = str(numerology_value)
         for number in numerology_string:
-            letter_value+=int(number)
-            numerology_value=letter_value
+            letter_value += int(number)
+            numerology_value = letter_value
     time.sleep(1)
-    return f"The numerology value of your name is '{numerology_value}'"
+    return Fore.GREEN + f"The numerology value of your name is '{numerology_value}'" + Style.RESET_ALL
 
 def user_name():
-    """Display menu for user to select one option,
+    """Display main menu for user to select one option,
     According to user choice give the relevant response"""
 
     while True:
-        #Error 
+        #Error handle 
         try:
             #The main menu, gives user options to select.
             print("MENU:")
@@ -98,42 +103,42 @@ def user_name():
             print("2. Discover numerology value of your name.")
             print("3. Read personality traits based on your Zodiac sign.")
             print("4. Exit program.")
-            user_selection=input("Enter your choice (1, 2,,3 or 4)\n")
+            user_selection = input("Enter your choice (1, 2, 3 or 4)\n")
 
             if user_selection == "1":
                 #Know the Zodiac sign
-                name_letter=input("Please enter the first letter of your name:\n")
+                name_letter = input("Please enter the first letter of your name:\n")
                 rashi = zodiac_sign(name_letter)
                 print(rashi)
                 print('\n')
 
-            elif user_selection=="2":
+            elif user_selection == "2":
                 #Know numerology value of name
-                user_name= input("Enter your full name:")
-                nume_value=addition_nume(user_name)
+                user_name = input("Enter your full name:")
+                nume_value = addition_nume(user_name)
                 print(nume_value)
                 print('\n')
 
-            elif user_selection =="3":
+            elif user_selection == "3":
                 #Read importance of zodiac sign
                 file = open('importance.txt') 
-                importances=file.read()
+                importances = file.read()
                 file.close()
                 print(importances)
                 print('\n')
 
             elif user_selection == "4":
                 # Exit
-                print("I appreciate your utilization of this program!")
+                print(Fore.CYAN + "I appreciate your utilization of this program!" + Style.RESET_ALL)
                 break  
             
             else:
                 # user selection is not valid
-                print("invalid choice. Please select again.") 
+                print(Fore.RED + "invalid choice. Please select again." + Style.RESET_ALL) 
                 print('\n')
 
         except ValueError:
-            print("Invalid input. Please enter a valid number.")
+            print(Fore.RED + "Invalid input. Please enter a valid number." + Style.RESET_ALL)
 
 
 
