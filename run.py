@@ -122,7 +122,7 @@ def user_name():
                 print('\n')
 
             elif user_selection == "3":
-                #Read importance of zodiac sign
+                #Read personality base on zodiac sign
                 file = open('importance.txt') 
                 importances = file.read()
                 file.close()
