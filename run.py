@@ -3,6 +3,7 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init() 
 
+
 def welcome_mess():
     # Creates a welcome message
     print(Fore.CYAN + "######################################")
@@ -23,7 +24,7 @@ def welcome_mess():
     time.sleep(1)
     print(Fore.CYAN + "^_^" + Style.RESET_ALL + "\n")
     time.sleep(1)
-  
+
 
 def zodiac_sign(letter):
     """Define dictionary to show zodiac sign,
@@ -31,18 +32,18 @@ def zodiac_sign(letter):
     loop and if statement shows output"""
 
     zodiac_alphabets = {
-         'bh':'Sagittarius', 'f':'Sagittarius', 'dh':'Sagittarius', 
-         'p':'Virgo', 'tha':'Virgo', 
-         'dd':'Cancer', 'h':'Cancer', 
-         'g':'Aquarius', 's':'Aquarius', 'sh':'Aquarius', 
-         'kh':'Capricorn', 'j':'Capricorn', 
-         'd':'Pisces', 'ch':'Pisces', 'z':'Pisces', 'th':'Pisces', 
-         'a':'Aries', 'l':'Aries', 'e':'Aries', 'i':'Aries', 'o':'Aries', 
-         'k':'Gemini', 'chh':'Gemini', 'gh':'Gemini', 'q':'Gemini', 'c':'Gemini', 
-         'm':'Leo', 'tt':'Leo', 
-         'r':'Libra', 't':'Libra', 
-         'b':'Taurus', 'v':'Taurus', 'u':'Taurus', 'w':'Taurus', 
-         'n':'Scorpio', 'y':'Scorpio', 'x':'No Zodiac sign for this letter'
+         'bh' : 'Sagittarius', 'f' : 'Sagittarius', 'dh' : 'Sagittarius', 
+         'p' : 'Virgo', 'tha' : 'Virgo', 
+         'dd' : 'Cancer', 'h' : 'Cancer', 
+         'g' : 'Aquarius', 's' : 'Aquarius', 'sh' : 'Aquarius', 
+         'kh' : 'Capricorn', 'j' : 'Capricorn', 
+         'd' : 'Pisces', 'ch' : 'Pisces', 'z' : 'Pisces', 'th' : 'Pisces', 
+         'a' : 'Aries', 'l' : 'Aries', 'e' : 'Aries', 'i' : 'Aries', 'o' : 'Aries', 
+         'k' : 'Gemini', 'chh' : 'Gemini', 'gh' : 'Gemini', 'q' : 'Gemini', 'c' : 'Gemini', 
+         'm' : 'Leo', 'tt' : 'Leo', 
+         'r' : 'Libra', 't' : 'Libra', 
+         'b' : 'Taurus', 'v' : 'Taurus', 'u' : 'Taurus', 'w' : 'Taurus', 
+         'n' : 'Scorpio', 'y' : 'Scorpio', 'x' : 'No Zodiac sign for this letter'
     }
     # User input convert to lowercase
     lower_case = letter.lower() 
@@ -55,7 +56,7 @@ def zodiac_sign(letter):
     return Fore.RED + """No data found please enter the correct character,
     For Instance: 
     Your name is 'John', enter 'j' or 'J'""" + Style.RESET_ALL
- 
+
 
 def numerology(nume_letter):
     """Define dictionary to calculate numerology value,
