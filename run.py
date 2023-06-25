@@ -52,8 +52,8 @@ def zodiac_sign(letter):
     for key, value in zodiac_alphabets.items():
         if key == lower_case:
             time.sleep(1)
-            return Fore.GREEN + f"Your Zodiac sign is '{value}'"+ Style.RESET_ALL
-
+            return Fore.GREEN + f"Your Zodiac sign is '{value}'" + Style.RESET_ALL
+        
     return Fore.RED + """No data found please enter the correct character,
     For Instance:
     Your name is 'John', enter 'j' or 'J'""" + Style.RESET_ALL
@@ -93,7 +93,7 @@ def addition_nume(user_name):
             letter_value += int(number)
             numerology_value = letter_value
     time.sleep(1)
-    return Fore.GREEN + f"The numerology value of your name is'{numerology_value}'" + Style.RESET_ALL
+    return Fore.GREEN + f"The numerology value of your name is '{numerology_value}'" + Style.RESET_ALL
 
 
 def user_name():
