@@ -52,8 +52,7 @@ def zodiac_sign(letter):
     for key, value in zodiac_alphabets.items():
         if key == lower_case:
             time.sleep(1)
-            return Fore.GREEN + f"Your Zodiac sign is '{value}'"
-            + Style.RESET_ALL
+            return Fore.GREEN + f"Your Zodiac sign is '{value}'" + Style.RESET_ALL
 
     return Fore.RED + """No data found please enter the correct character,
     For Instance:
