@@ -77,7 +77,7 @@ def numerology(nume_letter):
 
 
 def addition_nume(user_name):
-    # Addition of name numerology value
+    """ Addition of name numerology value"""
     numerology_value = 0
     for each_letter in user_name:
         alpha_value = numerology(each_letter)
@@ -121,9 +121,12 @@ def user_name():
             elif user_selection == "2":
                 # Know numerology value of name
                 user_name = input("Enter your full name:")
-                nume_value = addition_nume(user_name)
-                print(nume_value)
-                print('\n')
+                if not user_name.isalpha():
+                    print("Please input letterts only")
+                else:
+                    nume_value = addition_nume(user_name)
+                    print(nume_value)
+                    print('\n')
 
             elif user_selection == "3":
                 # Read personality base on zodiac sign
@@ -135,7 +138,7 @@ def user_name():
 
             elif user_selection == "4":
                 # Exit
-                print(Fore.CYAN + "Thank you for using this program!" + Style.RESET_ALL)
+                print(Fore.CYAN + "I appreciate your utilization of this program!" + Style.RESET_ALL)
                 break
 
             else:

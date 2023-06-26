@@ -19,7 +19,9 @@
         - [Option 3](#option-3)
         - [Option 4](#option-4)
 - [Testing](#testing)
-    - [Python Linter Testing](#python-linter-testing)
+    - [Python Linter Testing](#python-linter-testing)Manual testing
+    - [Manual testing](#manual-testing)
+    - [Lighthouse](#lighthouse)
     - [Bugs](#bugs)
 - [Deployment](#deployment)
     - [Heroku](#heroku)
@@ -126,6 +128,12 @@ The main page of the screen serves as a concise introduction to the program, pro
   
 - After choosing the second option, users have the opportunity to retrieve their numerology value. Nevertheless, in the event that users input numbers or symbols instead of letters, an error message will be promptly displayed, guiding them to input letters exclusively. This ensures that users are aware of the required input format and helps them avoid any potential confusion or incorrect results.
 
+- This image shows that how I calculate the numerology value from the user name with the example:
+<div align="center">
+  <img width="50%" alt="Screenshot 2023-06-26 at 10 09 15" src="https://github.com/Dayasuvagiya/SparkLing/assets/130157117/fe06c2ee-5a03-41a9-a458-801ad3db0741">
+  <img width="50%" alt="Screenshot 2023-06-26 at 10 24 27" src="https://github.com/Dayasuvagiya/SparkLing/assets/130157117/97b8cf92-ed10-44da-8384-ce21263ac635">
+  </div>
+
 ### Option 3:
 
 <div align="center">
@@ -133,7 +141,7 @@ The main page of the screen serves as a concise introduction to the program, pro
   </div>
   
   
-- Opting for option three from the menu allows users to explore general personality traits associated with their zodiac sign. This feature caters to users' curiosity, providing insights into the personality characteristics commonly observed in individuals based on their zodiac sign.
+- Opting for option three from the menu allows users to explore general personality traits associated with their zodiac sign, and user can also read the meaning and importance of numerology value. This feature caters to users' curiosity, providing insights into the personality characteristics commonly observed in individuals based on their zodiac sign.
 
 ### Option 4:
 
@@ -164,11 +172,27 @@ Upon running my code through Code Institutes Python linter, it successfully retu
 ### **Results:**
 #### 3 occasions of "expected 2 blank lines, found 1"
 #### 5 occasions of "trailing whitespace"
-#### 3 occasions of "line too long"
+#### 5 occasions of "line too long"
 
 ### 2. Run
 ### **Results:**
-3 occasions of "line too long" is not solved. Rest I have successfully solved.
+5 occasions of "line too long" is not solved. Rest I have successfully solved.
+
+<div align="center">
+  <img width="1249" alt="Screenshot 2023-06-26 at 10 07 05" src="https://github.com/Dayasuvagiya/SparkLing/assets/130157117/6bd120bb-832f-40eb-ac02-1763c31589d2">
+  </div>
+
+## Manual testing
+
+All features have been tested manually with a Mac Mini and a Chromebook with multiple browsers (Chrome, Safari, Firefox).
+
+## Lighthouse
+
+Considering the live status of the website, I found it crucial to perform Lighthouse testing to evaluate its performance. Here are the findings from the conducted Lighthouse testing:
+
+<div align="center">
+  <img width="556" alt="Screenshot 2023-06-26 at 10 03 07" src="https://github.com/Dayasuvagiya/SparkLing/assets/130157117/fa81402d-6894-43c5-8f56-d61fcdc6791d">
+  </div>
 
 <hr>
 
@@ -222,4 +246,6 @@ The site was completed as a Portfolio Project 3 piece for the Full Stack Softwar
 Thanks to the Love Sandwiches module. This was incredibly engaging and helpful.
 
 Online references about industrial standards and Youtube and google with guides.
+
+W3 Schools.
 
