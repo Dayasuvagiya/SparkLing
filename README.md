@@ -19,7 +19,8 @@
         - [Option 3](#option-3)
         - [Option 4](#option-4)
 - [Testing](#testing)
-    - [Python Linter Testing](#python-linter-testing)Manual testing
+    - [Python Linter Testing](#python-linter-testing)
+    - [Manual testing] (#manual-testing)
     - [Manual testing](#manual-testing)
     - [Lighthouse](#lighthouse)
     - [Bugs](#bugs)
