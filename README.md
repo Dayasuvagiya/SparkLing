@@ -21,7 +21,7 @@
 - [Testing](#testing)
     - [Python Linter Testing](#python-linter-testing)
     - [Manual testing] (#manual-testing)
-    - [Manual testing](#manual-testing)
+    - [Manual testin](#manual-testing)
     - [Lighthouse](#lighthouse)
     - [Bugs](#bugs)
 - [Deployment](#deployment)
