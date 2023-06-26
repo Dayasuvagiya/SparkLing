@@ -208,7 +208,7 @@ Through testing, I discovered some potential issues in the code and made some ch
 
 - Python3: The main code used.
 - Colorama library: To give content color
-- CodeAnywhere: Used to host and edit all code and the website.
+- Visual Studio: Used to host and edit all code and the website.
 - Github: Used to deploy the website.
 - ChatGPT: I utilized the tool as a means to effectively structure and organize my wording across the entirety of the readme file.
 

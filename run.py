@@ -135,7 +135,7 @@ def user_name():
 
             elif user_selection == "4":
                 # Exit
-                print(Fore.CYAN + "I appreciate youfor using this program!" + Style.RESET_ALL)
+                print(Fore.CYAN + "Thank you for using this program!" + Style.RESET_ALL)
                 break
 
             else:
